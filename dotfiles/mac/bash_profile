@@ -1,0 +1,43 @@
+export PS1='\u@\h:\e[01;34m\W \e[0;0m$ '
+export CLICOLOR=1
+
+export PATH="$PATH:/usr/local/bin"
+
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# Ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# GO
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+
+# Flutter
+export PATH="$PATH:${HOME}/Library/flutter/bin"
+export PATH="$PATH:${HOME}/Library/flutter/bin/cache/dart-sdk/bin"
+
+# Node
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
+# Misc.
+export PATH="/Users/macuylerdunn/.ebcli-virtual-env/executables:$PATH"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="$PATH:${HOME}/Library/png_color_mask"
+export PATH="$PATH:${HOME}/Library/clock"
+export PATH="$PATH:${HOME}/Library/sandbox"
+export PATH="$PATH:${HOME}/Library/ctf_flow"
+export PATH="$PATH:${HOME}/Library/qd"
+export PATH="$PATH:${HOME}/Code/projects/config/bin"
+alias sandbox="source sandbox"
+alias qd="source qd.sh"
+
+
+export PATH="$HOME/.cargo/bin:$PATH"

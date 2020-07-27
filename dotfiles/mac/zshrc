@@ -1,0 +1,71 @@
+export PROMPT='%n@%M:%F{blue}%1~%f %# '
+export CLICOLOR=1
+export PATH="/usr/local/sbin:$PATH"
+
+# Node
+lazynvm() {
+	unset -f nvm node npm npx
+	export NVM_DIR="$HOME/.nvm"
+	. "$(brew --prefix nvm)/nvm.sh"
+}
+nvm() {
+	lazynvm
+	nvm $@
+}
+node() {
+	lazynvm
+	node $@
+}
+npm() {
+	lazynvm
+	npm $@
+}
+npx() {
+	lazynvm
+	npx $@
+}
+
+
+# Java
+lazyjenv() {
+	unset -f jenv java
+	export JAVA_HOME=$(/usr/libexec/java_home)
+	export PATH="$HOME/.jenv/bin:$PATH"
+	eval "$(jenv init -)"
+}
+jenv() {
+	lazyjenv
+	jenv $@
+}
+java() {
+	lazyjenv
+	java $@
+}
+
+
+# Ruby
+lazyrbenv() {
+	unset -f rbenv ruby jekyll
+	export PATH="$HOME/.rbenv/bin:$PATH"
+	old_pwd="$PWD"
+	cd $HOME/.gem/ruby/
+	for d in */ ; do
+		b="bin"
+		export PATH="$HOME/.gem/ruby/$d$b:$PATH"
+	done
+	cd $old_pwd
+	eval "$(rbenv init -)"
+}
+rbenv() {
+	lazyrbenv
+	rbenv $@
+}
+ruby() {
+	lazyrbenv
+	ruby $@
+}
+jekyll() {
+	lazyrbenv
+	jekyll $@
+}
+
