@@ -2,13 +2,15 @@
 
 import sys, os
 
+dotfiles = '~/Code/projects/my-config/dotfiles'
+
 def setup(option):
-    global_files = os.popen('ls -p dotfiles | grep -v /').read().strip().split('\n')
-    local_files = os.popen(f'ls -p dotfiles/{option} | grep -v /').read().strip().split('\n')
+    global_files = os.popen(f'ls -p {dotfiles} | grep -v /').read().strip().split('\n')
+    local_files = os.popen(f'ls -p {dotfiles}/{option} | grep -v /').read().strip().split('\n')
     for g in global_files:
-        os.system(f'cp dotfiles/{g} ~/.{g}')
+        os.system(f'cp {dotfiles}/{g} ~/.{g}')
     for l in local_files:
-        os.system(f'cp dotfiles/{option}/{l} ~/.{l}')
+        os.system(f'cp {dotfiles}/{option}/{l} ~/.{l}')
     return
 
 def main():
@@ -16,7 +18,8 @@ def main():
         print('Usage:\n config-my name-of-os')
     else:
         _, option = sys.argv
-        OSs = set(map(lambda x: x.split('/')[1], os.popen('ls -d dotfiles/*/').read().strip().split('\n')))
+        dirs = os.popen(f'ls -d {dotfiles}/*/').read().strip().split('\n')
+        OSs = set(map(lambda x: x.split('/')[len(x.split('/')) - 2], dirs))
         if option.lower() in OSs:
             setup(option.lower())
         else:
