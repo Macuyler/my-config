@@ -13,7 +13,7 @@ def setup(option):
 
 def main():
     if len(sys.argv) != 2:
-        print('Usage:\n setup-config name-of-os')
+        print('Usage:\n config-my name-of-os')
     else:
         _, option = sys.argv
         OSs = set(map(lambda x: x.split('/')[1], os.popen('ls -d dotfiles/*/').read().strip().split('\n')))

@@ -18,7 +18,7 @@ export PATH="$PATH:${HOME}/Library/clock"
 export PATH="$PATH:${HOME}/Library/sandbox"
 export PATH="$PATH:${HOME}/Library/ctf_flow"
 export PATH="$PATH:${HOME}/Library/qd"
-export PATH="$PATH:${HOME}/Code/projects/config/bin"
+export PATH="$PATH:${HOME}/Code/projects/my-config/bin"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
 
