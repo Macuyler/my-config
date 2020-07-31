@@ -11,11 +11,15 @@ cd my-config
 ```
 
 ## Current Configs:
+ - vimrc
+ - tmux.conf
  - **mac**
    - bash_profile
    - zprofile
    - zshrc
  - **kali**
+   - bash_profile
+ - **ubuntu**
    - bash_profile
    
 ## Current Utils:
