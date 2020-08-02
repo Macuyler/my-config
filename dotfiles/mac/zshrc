@@ -1,7 +1,6 @@
 export PROMPT='%n@%M:%F{blue}%1~%f %# '
 export CLICOLOR=1
 export PATH="/usr/local/sbin:$PATH"
-source ~/.git-prompt.sh
 
 # Node
 lazynvm() {
