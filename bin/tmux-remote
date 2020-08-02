@@ -5,3 +5,4 @@ tmux bind-key C-a send-prefix
 tmux set-option status-style bg=blue
 tmux set pane-border-style fg=white
 tmux set pane-active-border-style "bg=default fg=blue"
+tmux set status-right '#(whoami)@#H  '
