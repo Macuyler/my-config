@@ -13,6 +13,7 @@ cd my-config
 ## Current Configs:
  - vimrc
  - tmux.conf
+ - gitmux.conf
  - **mac**
    - bash_profile
    - zprofile
@@ -25,3 +26,8 @@ cd my-config
 ## Current Utils:
  - **my-config**: Copies config files to your ~ dir
  - **tmux-remote**: Utilizes a c-A config for nested tmux
+ - **format-branch**: Prepend branch name with "@"
+
+## Misc.
+To show the current git branch in the status-right, download the latest [gitmux](https://github.com/arl/gitmux/releases) build and move it to `./bin/gitmux`.
+
