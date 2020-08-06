@@ -19,9 +19,9 @@ cd my-config
    - zprofile
    - zshrc
  - **kali**
-   - bash_profile
+   - bashrc
  - **ubuntu**
-   - bash_profile
+   - bashrc
    
 ## Current Utils:
  - **my-config**: Copies config files to your ~ dir
