@@ -30,14 +30,11 @@ export NVM_DIR="$HOME/.nvm"
 # Misc.
 export PATH="/Users/macuylerdunn/.ebcli-virtual-env/executables:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export PATH="$PATH:${HOME}/Library/png_color_mask"
-export PATH="$PATH:${HOME}/Library/clock"
-export PATH="$PATH:${HOME}/Library/sandbox"
-export PATH="$PATH:${HOME}/Library/ctf_flow"
-export PATH="$PATH:${HOME}/Library/qd"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 export PATH="$PATH:${HOME}/Code/projects/my-config/bin"
+export PATH="$PATH:${HOME}/Code/projects/mac"
+export PATH="$PATH$(cat ~/.macbin/.path)"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
 
-
-export PATH="$HOME/.cargo/bin:$PATH"

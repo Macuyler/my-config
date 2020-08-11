@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# ====================================================
+# Run this script as:
+#    source sandbox
+# to automatically cd into the new sandbox directory
+# (Recomended: add alias sandbox="source sandbox" to
+# your profile for easy access)
+# ====================================================
+
+BOXPATH="$HOME/Code/.sandbox"
+TODAY=$(date +'%m-%d-%Y')
+
+[ ! -d "$BOXPATH/$TODAY" ] && mkdir "$BOXPATH/$TODAY"
+cd "$BOXPATH/$TODAY"
+
