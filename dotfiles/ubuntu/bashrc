@@ -1,5 +1,6 @@
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\] $ '
 alias ls="ls --color=auto"
 alias sandbox="source sandbox"
+alias qd="source qd.sh"
 export PATH="$PATH:~/Public/mac"
 export PATH="$PATH$(cat ~/.macbin/.path)"
