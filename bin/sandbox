@@ -8,7 +8,7 @@
 # your profile for easy access)
 # ====================================================
 
-BOXPATH="$HOME/Code/.sandbox"
+BOXPATH="$HOME/.sandbox"
 TODAY=$(date +'%m-%d-%Y')
 
 [ ! -d "$BOXPATH/$TODAY" ] && mkdir "$BOXPATH/$TODAY"

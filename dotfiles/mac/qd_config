@@ -1,0 +1,3 @@
+root=/Users/macuylerdunn/
+include=[/Users/macuylerdunn/.sandbox]
+exclude=[node_modules,__pycache__,/Users/macuylerdunn/Library/,/Users/macuylerdunn/Movies/,/Users/macuylerdunn/Music/,/Users/macuylerdunn/Pictures/,/Users/macuylerdunn/Public/]
