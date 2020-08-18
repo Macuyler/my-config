@@ -3,8 +3,6 @@ This is a repo containing my commonly used dotfiles and utilities.
 
 ## Setup
 ```
-mkdir -p ~/Code/projects
-cd ~/Code/projects
 git clone https://github.com/Macuyler/my-config.git
 cd my-config
 ./bin/config-my {name-of-your-os}
