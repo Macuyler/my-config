@@ -2,10 +2,15 @@
 This is a repo containing my commonly used dotfiles and utilities.
 
 ## Setup
+ - Standard
 ```
 git clone https://github.com/Macuyler/my-config.git
 cd my-config
 ./bin/config-my {name-of-your-os}
+```
+ - With [mac](https://github.com/Macuyler/mac)
+```
+mac install https://github.com/Macuyler/my-config.git -p /bin
 ```
 
 ## Current Configs:
