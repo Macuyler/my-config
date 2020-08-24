@@ -17,7 +17,6 @@ mac install https://github.com/Macuyler/my-config.git -p /bin
  - gitmux.conf
  - tmux.conf
  - vimrc
- 
  - **mac**
    - bash_profile
    - clock.conf
