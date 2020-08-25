@@ -11,9 +11,10 @@ export PATH="$PATH:${HOME}/Library/flutter/bin"
 export PATH="$PATH:${HOME}/Library/flutter/bin/cache/dart-sdk/bin"
 
 # Misc.
-export PATH="/Users/macuylerdunn/.ebcli-virtual-env/executables:$PATH"
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:${HOME}/Library/Android/sdk/tools"
+export PATH="$PATH:${HOME}/.ebcli-virtual-env/executables"
+export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 export PATH="$PATH:${HOME}/Code/projects/mac"
 export PATH="$PATH$(cat ~/.macbin/.path)"
