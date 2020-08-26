@@ -19,5 +19,4 @@ export PATH="$PATH:${HOME}/Code/projects/mac"
 export PATH="$PATH$(cat ~/.macbin/.path)"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
-alias rootedAVD="${HOME}/Library/Android/sdk/emulator/emulator -avd rootedAVD -writable-system -selinux disabled -qemu -enable-hvf"
 
