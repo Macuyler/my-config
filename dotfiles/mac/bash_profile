@@ -28,8 +28,6 @@ export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
 
 # Misc.
-export PATH="$PATH:${HOME}/Library/Android/sdk/platform-tools"
-export PATH="$PATH:${HOME}/Library/Android/sdk/emulator"
 export PATH="$PATH:${HOME}/.ebcli-virtual-env/executables"
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -38,4 +36,4 @@ export PATH="$PATH:${HOME}/Code/projects/mac"
 export PATH="$PATH$(cat ~/.macbin/.path)"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
-
+alias rootedAVD="${HOME}/Library/Android/sdk/emulator/emulator -avd rootedAVD -writable-system -selinux disabled -qemu -enable-hvf"
