@@ -4,7 +4,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Node
 lazynvm() {
-	unset -f nvm node npm npx
+	unset -f nvm node npm npx firebase
 	export NVM_DIR="$HOME/.nvm"
 	. "$(brew --prefix nvm)/nvm.sh"
 }
@@ -23,6 +23,10 @@ npm() {
 npx() {
 	lazynvm
 	npx $@
+}
+firebase() {
+	lazynvm
+	firebase $@
 }
 
 
