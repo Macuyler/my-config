@@ -2,54 +2,42 @@ export PROMPT='%n@%M:%F{blue}%1~%f %# '
 export CLICOLOR=1
 export PATH="/usr/local/sbin:$PATH"
 
+
+setup() {
+	local callback=$1
+	shift 1
+	for cmd in $@
+	do
+		eval "$cmd() { $callback; $cmd "'$@'"; }"
+	done
+}
+
+
 # Node
+nvm_cmds=(nvm node npm npx firebase uvcc)
 lazynvm() {
-	unset -f nvm node npm npx firebase
+	unset -f $nvm_cmds
 	export NVM_DIR="$HOME/.nvm"
 	. "$(brew --prefix nvm)/nvm.sh"
 }
-nvm() {
-	lazynvm
-	nvm $@
-}
-node() {
-	lazynvm
-	node $@
-}
-npm() {
-	lazynvm
-	npm $@
-}
-npx() {
-	lazynvm
-	npx $@
-}
-firebase() {
-	lazynvm
-	firebase $@
-}
+setup lazynvm $nvm_cmds
 
 
 # Java
+jenv_cmds=(jenv java)
 lazyjenv() {
-	unset -f jenv java
+	unset -f $jenv_cmds
 	export JAVA_HOME=$(/usr/libexec/java_home)
 	export PATH="$HOME/.jenv/bin:$PATH"
 	eval "$(jenv init -)"
 }
-jenv() {
-	lazyjenv
-	jenv $@
-}
-java() {
-	lazyjenv
-	java $@
-}
+setup lazyjenv $jenv_cmds
 
 
 # Ruby
+rbenv_cmds=(rbenv ruby jekyll)
 lazyrbenv() {
-	unset -f rbenv ruby jekyll
+	unset -f $rbenv_cmds
 	export PATH="$HOME/.rbenv/bin:$PATH"
 	old_pwd="$PWD"
 	cd $HOME/.gem/ruby/
@@ -60,16 +48,5 @@ lazyrbenv() {
 	cd $old_pwd
 	eval "$(rbenv init -)"
 }
-rbenv() {
-	lazyrbenv
-	rbenv $@
-}
-ruby() {
-	lazyrbenv
-	ruby $@
-}
-jekyll() {
-	lazyrbenv
-	jekyll $@
-}
+setup lazyrbenv $rbenv_cmds
 
