@@ -20,3 +20,5 @@ export PATH="$PATH$(cat ~/.macbin/.path)"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
 
+[ -d "${HOME}/ghidra_scripts" ] && rmdir ~/ghidra_scripts
+
