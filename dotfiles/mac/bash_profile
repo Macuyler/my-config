@@ -30,6 +30,7 @@ export NVM_DIR="$HOME/.nvm"
 # Misc.
 export PATH="$PATH:${HOME}/.ebcli-virtual-env/executables"
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+export PATH="$PATH:${HOME}/Library/Python/3.9/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 export PATH="$PATH:${HOME}/Code/projects/mac"

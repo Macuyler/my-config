@@ -10,9 +10,11 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 export PATH="$PATH:${HOME}/Library/flutter/bin"
 export PATH="$PATH:${HOME}/Library/flutter/bin/cache/dart-sdk/bin"
 
+
 # Misc.
 export PATH="$PATH:${HOME}/.ebcli-virtual-env/executables"
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+export PATH="$PATH:${HOME}/Library/Python/3.9/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 export PATH="$PATH:${HOME}/Code/projects/mac"
