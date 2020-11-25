@@ -1,5 +1,5 @@
 " Setup:
-" After copying this file to your home directory, run the bin/setupvim.sh
+" After copying this file to your home directory, run the bin/setup-vim
 " script to install the needed plugins.
 
 " *** Vundle Config ***
