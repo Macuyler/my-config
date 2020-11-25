@@ -1,4 +1,42 @@
+
+" *** Vundle Config ***
+" :PluginInstall ~ to install all listed Plugins
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" --- Open Plugins ---
+Plugin 'gmarik/Vundle.vim'
+Plugin 'jnurmine/Zenburn'
+" Python
+Plugin 'vim-scripts/indentpython.vim'
+Bundle 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+" --- Close Plugins ---
+call vundle#end()
+
+" Plugin Settings
+let g:ycm_autoclose_preview_window_after_completion=1
+let python_highlight_all=1
+colorscheme zenburn
+
+
+" *** Global Options ***
 filetype plugin indent on
 syntax on
 set tabstop=2
 set number
+set splitbelow
+set splitright
+set encoding=utf-8
+set backspace=indent,eol,start " Allow insert Backspace
+
+
+" Navigate Splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
