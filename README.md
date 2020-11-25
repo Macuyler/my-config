@@ -34,6 +34,7 @@ mac install https://github.com/Macuyler/my-config.git -p /bin
  - **ctf-mount**: Mount a local CTF nfs volume on mac
  - **format-branch**: Prepend branch name with "@"
  - **sandbox**: Quickly open up hidden dir to mess around in
+ - **setupvim**: Install all plugins used in the vimrc
  - **tmux-remote**: Utilizes a c-A config for nested tmux
 
 ## Misc.
