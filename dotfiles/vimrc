@@ -1,3 +1,6 @@
+" Setup:
+" After copying this file to your home directory, run the bin/setupvim.sh
+" script to install the needed plugins.
 
 " *** Vundle Config ***
 " :PluginInstall ~ to install all listed Plugins

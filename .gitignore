@@ -2,3 +2,6 @@
 # gitmux
 bin/gitmux
 
+# vim
+*.swp
+
