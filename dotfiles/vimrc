@@ -13,6 +13,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Color Scheme
 Plugin 'jnurmine/Zenburn'
+Plugin 'joshdick/onedark.vim'
 " Zen Mode :Goyo
 Plugin 'junegunn/goyo.vim'
 " Python
@@ -23,6 +24,16 @@ Plugin 'nvie/vim-flake8'
 " --- Close Plugins ---
 call vundle#end()
 
+" Custom Background Color
+if (has("autocmd") && !has("gui_running"))
+	augroup colors
+		autocmd!
+		let s:background = { "gui": "#1B1B1B", "cterm": "235", "cterm16": "0" } " Original #282C34
+		autocmd ColorScheme * call onedark#set_highlight("Normal", { "bg": s:background }) "No `fg` setting
+	augroup END
+endif
+
+
 " Plugin Settings
 let g:syntastic_python_checkers = ['python']
 let g:syntastic_python_python_exec = 'python3'
@@ -31,7 +42,7 @@ let g:goyo_width = '60%'
 let g:goyo_height = '100%'
 let g:goyo_linenr = 1
 let python_highlight_all=1
-colorscheme zenburn
+colorscheme onedark
 
 
 " *** Global Options ***
@@ -43,6 +54,11 @@ set splitbelow
 set splitright
 set encoding=utf-8
 set backspace=indent,eol,start " Allow insert Backspace
+" Enable background colors
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set background=dark
 
 
 " Navigate Splits
