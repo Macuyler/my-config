@@ -12,7 +12,6 @@ call vundle#begin()
 " Plugin Manager
 Plugin 'gmarik/Vundle.vim'
 " Color Scheme
-Plugin 'jnurmine/Zenburn'
 Plugin 'joshdick/onedark.vim'
 " Zen Mode :Goyo
 Plugin 'junegunn/goyo.vim'
