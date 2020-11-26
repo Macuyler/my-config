@@ -15,6 +15,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'joshdick/onedark.vim'
 " Zen Mode :Goyo
 Plugin 'junegunn/goyo.vim'
+" File Tree
+Plugin 'preservim/nerdtree'
 " Python
 Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
@@ -22,6 +24,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 " --- Close Plugins ---
 call vundle#end()
+
 
 " Custom Background Color
 if (has("autocmd") && !has("gui_running"))
@@ -40,6 +43,10 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:goyo_width = '60%'
 let g:goyo_height = '100%'
 let g:goyo_linenr = 1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeDirArrows=1
+let g:NERDTreeStatusline="%#NonText#"
+let g:laststatus=0
 let python_highlight_all=1
 colorscheme onedark
 
@@ -53,6 +60,7 @@ set splitbelow
 set splitright
 set encoding=utf-8
 set backspace=indent,eol,start " Allow insert Backspace
+
 " Enable background colors
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -65,6 +73,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
 
 " Goyo Quit
 function! s:goyo_enter()
@@ -87,4 +96,32 @@ endfunction
 
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
+
+
+" Auto NERDTree
+map <C-\> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+" Toggle Status Line
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+	if s:hidden_all  == 0
+		let s:hidden_all = 1
+		set noshowmode
+		set noruler
+		set laststatus=0
+		set noshowcmd
+	else
+		let s:hidden_all = 0
+		set showmode
+		set ruler
+		set laststatus=2
+		set showcmd
+	endif
+endfunction
+:call ToggleHiddenAll() " Hide Status Line by default
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
+
 
