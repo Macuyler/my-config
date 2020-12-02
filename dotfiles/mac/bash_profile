@@ -37,6 +37,7 @@ export PATH="$PATH:${HOME}/Code/projects/mac"
 export PATH="$PATH$(cat ~/.macbin/.path)"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
+alias tm="tmux new -s '?' || tmux"
 
 # Brew Completions
 if type brew &>/dev/null; then
