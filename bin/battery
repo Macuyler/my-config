@@ -27,7 +27,8 @@ get_linux_battery() {
 	pct=$((100 * now / full))
 	[[ "$status_txt" = "Full" ]] || \
 		[[ "$status_txt" = "Charging" ]] && status="$CHARGING"
-	[[ "$status_txt" = "Discharging" ]] && status="$BATTERY"
+	[[ "$status_txt" = "Discharging" ]] || \
+		[[ "$status_txt" = "Not charging" ]] && status="$BATTERY"
 	output $pct "$status" $1
 }
 
