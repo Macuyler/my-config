@@ -24,7 +24,7 @@ get_linux_battery() {
 	status_txt=$(cat $BAT_PATH/status)
 	full=$(cat $BAT_PATH/energy_full)
 	now=$(cat $BAT_PATH/energy_now)
-	pct=$(100 * now / full)
+	pct=$((100 * now / full))
 	[[ "$status_txt" = "Full" ]] || \
 		[[ "$status_txt" = "Charging" ]] && status="$CHARGING"
 	[[ "$status_txt" = "Discharging" ]] && status="$BATTERY"
