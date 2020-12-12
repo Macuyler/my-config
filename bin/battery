@@ -1,0 +1,37 @@
+#!/bin/bash
+
+UNAME=$(uname -s)
+BAT_PATH=/sys/class/power_supply/BAT0
+
+
+get_linux_battery() {
+	status=$(cat $BAT_PATH/status)
+	full=$(cat $BAT_PATH/energy_full)
+	now=$(cat $BAT_PATH/energy_now)
+	pct=$(100 * now / full)
+	[[ "$status" = "Full" ]] && status="Charging"
+	echo "$status|$pct"
+}
+
+
+get_mac_battery() {
+	BAT=$(pmset -g batt)
+	status_line=$(echo "$BAT" | head -n 1)
+	pct_line=$(echo "$BAT" | tail -n 1)
+	if [[ "$status_line" == *"AC Power"* ]]; then
+		status="Charging"
+	elif [[ "$status_line" == *"Battery Power"* ]]; then
+		status="Discharging"
+	fi
+	pct=$(echo "$pct_line" | cut -d'%' -f1 | rev | cut -f1 | rev)
+	echo "$status|$pct"
+}
+
+
+if [ "$UNAME" = "Linux" ]; then
+	[ -d $BAT_PATH ] && \
+		get_linux_battery
+elif [ "$UNAME" = "Darwin" ]; then
+	get_mac_battery
+fi
+
