@@ -7,11 +7,12 @@ BATTERY="🔋"
 
 
 output() {
-	pct=$2
-	status=$3
-	if [ "$1" = "%" ]; then
+	pct=$1
+	status=$2
+	arg=$3
+	if [ "$arg" = "%" ]; then
 		echo "$pct"
-	elif [ "$1" = "@" ]; then
+	elif [ "$arg" = "@" ]; then
 		echo "$status"
 	else
 		echo "$status $pct"
@@ -26,7 +27,7 @@ get_linux_battery() {
 	pct=$(100 * now / full)
 	[[[ "$status_txt" = "Full" ]] -o [[ "$status_txt" = "Charging" ]]] && status="$CHARGING"
 	[[ "$status_txt" = "Discharging" ]] && status="$BATTERY"
-	output $1 $pct $status
+	output $pct $status $1
 }
 
 
@@ -37,7 +38,7 @@ get_mac_battery() {
 	pct=$(echo "$pct_line" | cut -d'%' -f1 | rev | cut -f1 | rev)
 	[[ "$status_line" == *"AC Power"* ]] && status="$CHARGING"
 	[[ "$status_line" == *"Battery Power"* ]] && status="$BATTERY"
-	output $1 $pct $status
+	output $pct $status $1
 }
 
 
