@@ -2,8 +2,8 @@
 
 UNAME=$(uname -s)
 BAT_PATH=/sys/class/power_supply/BAT0
-CHARGING="⚡ ("
-BATTERY="   ("
+CHARGING="⚡"
+BATTERY="  "
 
 
 output() {
@@ -15,7 +15,7 @@ output() {
 	elif [ "$arg" = "@" ]; then
 		echo "$status"
 	else
-		echo "$status$pct%)"
+		echo "($pct%)$status"
 	fi
 }
 
