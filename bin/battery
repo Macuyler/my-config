@@ -15,7 +15,7 @@ output() {
 	elif [ "$arg" = "@" ]; then
 		echo "$status"
 	else
-		echo "($pct%)$status"
+		echo "$status$pct%"
 	fi
 }
 
