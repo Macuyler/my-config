@@ -11,11 +11,11 @@ output() {
 	status=$2
 	arg=$3
 	if [ "$arg" = "%" ]; then
-		echo "$pct"
+		echo "$pct%"
 	elif [ "$arg" = "@" ]; then
 		echo "$status"
 	else
-		echo "$status $pct"
+		echo "$status $pct%"
 	fi
 }
 
