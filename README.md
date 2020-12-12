@@ -30,6 +30,7 @@ mac install https://github.com/Macuyler/my-config.git -p /bin
    - qd_config
    
 ## Current Utils:
+ - **battery**: Battery percentage for tmux status
  - **config-my**: Copies config files to your ~ dir
  - **ctf-mount**: Mount a local CTF nfs volume on mac
  - **format-branch**: Prepend branch name with "@"
