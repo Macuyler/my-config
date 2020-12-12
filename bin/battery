@@ -2,15 +2,31 @@
 
 UNAME=$(uname -s)
 BAT_PATH=/sys/class/power_supply/BAT0
+CHARGING="⚡"
+BATTERY="🔋"
+
+
+output() {
+	pct=$2
+	status=$3
+	if [ "$1" = "%" ]; then
+		echo "$pct"
+	elif [ "$1" = "?" ]; then
+		echo "$status"
+	else
+		echo "$status $pct"
+	fi
+}
 
 
 get_linux_battery() {
-	status=$(cat $BAT_PATH/status)
+	status_txt=$(cat $BAT_PATH/status_txt)
 	full=$(cat $BAT_PATH/energy_full)
 	now=$(cat $BAT_PATH/energy_now)
 	pct=$(100 * now / full)
-	[[ "$status" = "Full" ]] && status="Charging"
-	echo "$status|$pct"
+	[[[ "$status_txt" = "Full" ]] -o [[ "$status_txt" = "Charging" ]]] && status="$CHARGING"
+	[[ "$status_txt" = "Discharging" ]] && status="$BATTERY"
+	output $1 $pct $status
 }
 
 
@@ -18,20 +34,17 @@ get_mac_battery() {
 	BAT=$(pmset -g batt)
 	status_line=$(echo "$BAT" | head -n 1)
 	pct_line=$(echo "$BAT" | tail -n 1)
-	if [[ "$status_line" == *"AC Power"* ]]; then
-		status="Charging"
-	elif [[ "$status_line" == *"Battery Power"* ]]; then
-		status="Discharging"
-	fi
 	pct=$(echo "$pct_line" | cut -d'%' -f1 | rev | cut -f1 | rev)
-	echo "$status|$pct"
+	[[ "$status_line" == *"AC Power"* ]] && status="$CHARGING"
+	[[ "$status_line" == *"Battery Power"* ]] && status="$BATTERY"
+	output $1 $pct $status
 }
 
 
 if [ "$UNAME" = "Linux" ]; then
 	[ -d $BAT_PATH ] && \
-		get_linux_battery
+		get_linux_battery $1
 elif [ "$UNAME" = "Darwin" ]; then
-	get_mac_battery
+	get_mac_battery $1
 fi
 
