@@ -2,7 +2,7 @@
 
 UNAME=$(uname -s)
 BAT_PATH=/sys/class/power_supply/BAT0
-CHARGING="#[fg=cyan]*"
+CHARGING="#[fg=cyan]ꜛ"
 BATTERY=" "
 
 
