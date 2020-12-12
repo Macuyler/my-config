@@ -11,7 +11,7 @@ output() {
 	status=$3
 	if [ "$1" = "%" ]; then
 		echo "$pct"
-	elif [ "$1" = "?" ]; then
+	elif [ "$1" = "@" ]; then
 		echo "$status"
 	else
 		echo "$status $pct"
