@@ -2,8 +2,8 @@
 
 UNAME=$(uname -s)
 BAT_PATH=/sys/class/power_supply/BAT0
-CHARGING="⚡"
-BATTERY="  "
+CHARGING="#[fg=cyan]*"
+BATTERY=" "
 
 
 output() {
@@ -26,8 +26,8 @@ get_linux_battery() {
 	now=$(cat $BAT_PATH/energy_now)
 	pct=$((100 * now / full))
 	[[ "$status_txt" = "Full" ]] || \
-		[[ "$status_txt" = "Charging" ]] && status="$CHARGING "
-	[[ "$status_txt" = "Discharging" ]] && status="$BATTERY "
+		[[ "$status_txt" = "Charging" ]] && status="$CHARGING"
+	[[ "$status_txt" = "Discharging" ]] && status="$BATTERY"
 	output $pct "$status" $1
 }
 
