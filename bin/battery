@@ -1,9 +1,24 @@
 #!/bin/bash
 
+# =============================================== #
+#                                                 #
+# This script will display your laptops current   #
+# battery percentage for use in your tmux status. #
+#                                                 #
+# Usage:                                          #
+#  The full tmux battery display.                 #
+#    $ battery                                    #
+#  Just the battery percentage.                   #
+#    $ battery %                                  #
+#  Just the battery status.                       #
+#    $ battery @                                  #
+# =============================================== #
+
+
 UNAME=$(uname -s)
 BAT_PATH=/sys/class/power_supply/BAT0
-CHARGING="#[fg=cyan]ꜛ"
-BATTERY=" "
+CHARGING=1
+BATTERY=0
 
 
 output() {
@@ -13,9 +28,11 @@ output() {
 	if [ "$arg" = "%" ]; then
 		echo "$pct%"
 	elif [ "$arg" = "@" ]; then
-		echo "$status"
+		[[ "$status" = "$CHARGING" ]] && echo "Charging"
+		[[ "$status" = "$BATTERY" ]] && echo "Not Charging"
 	else
-		echo "$status$pct%"
+		[[ "$status" = "$CHARGING" ]] && echo "#[fg=cyan]ꜛ$pct%"
+		[[ "$status" = "$BATTERY" ]] && echo " $pct%"
 	fi
 }
 
