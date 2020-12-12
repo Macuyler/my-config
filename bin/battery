@@ -2,8 +2,8 @@
 
 UNAME=$(uname -s)
 BAT_PATH=/sys/class/power_supply/BAT0
-CHARGING="⚡"
-BATTERY=" "
+CHARGING="⚡ ("
+BATTERY="   ("
 
 
 output() {
@@ -15,7 +15,7 @@ output() {
 	elif [ "$arg" = "@" ]; then
 		echo "$status"
 	else
-		echo "$status $pct%"
+		echo "$status$pct%)"
 	fi
 }
 
@@ -28,7 +28,7 @@ get_linux_battery() {
 	[[ "$status_txt" = "Full" ]] || \
 		[[ "$status_txt" = "Charging" ]] && status="$CHARGING"
 	[[ "$status_txt" = "Discharging" ]] && status="$BATTERY"
-	output $pct $status $1
+	output $pct "$status" $1
 }
 
 
@@ -39,7 +39,7 @@ get_mac_battery() {
 	pct=$(echo "$pct_line" | cut -d'%' -f1 | rev | cut -f1 | rev)
 	[[ "$status_line" == *"AC Power"* ]] && status="$CHARGING"
 	[[ "$status_line" == *"Battery Power"* ]] && status="$BATTERY"
-	output $pct $status $1
+	output $pct "$status" $1
 }
 
 
