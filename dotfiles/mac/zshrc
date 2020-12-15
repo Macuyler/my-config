@@ -35,7 +35,7 @@ setup lazyjenv $jenv_cmds
 
 
 # Ruby
-rbenv_cmds=(rbenv ruby jekyll)
+rbenv_cmds=(rbenv ruby jekyll bundle)
 lazyrbenv() {
 	unset -f $rbenv_cmds
 	export PATH="$HOME/.rbenv/bin:$PATH"
