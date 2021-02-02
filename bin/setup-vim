@@ -5,7 +5,8 @@
 [ ! -d "${HOME}/.vim/bundle/Vundle.vim" ] && \
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && \
 	vim -c ":PluginInstall" && \
-	~/.vim/bundle/YouCompleteMe/install.py
+	~/.vim/bundle/YouCompleteMe/install.py && \
+	pip3 install --user flake8
 
 echo $'\n * Vim is all setup!\n'
 
