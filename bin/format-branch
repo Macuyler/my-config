@@ -1,2 +1,5 @@
 #!/bin/bash
-sed 's/^.*]//' | awk '{ if ($0 != "") print "@" $0}'
+sed -e 's/^.*]//' \
+    -e 's/^[[:space:]]*//' \
+    -e 's/[[:space:]]*$//' | \
+        awk '{ if ($0 != "") print "@" $0}'
