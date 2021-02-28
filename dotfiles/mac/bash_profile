@@ -33,7 +33,7 @@ export PATH="$PATH:/usr/local/opt/mysql-client/bin"
 export PATH="$PATH:${HOME}/Library/Python/3.9/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
-export PATH="$PATH:${HOME}/Code/projects/mac"
+export PATH="$PATH:${HOME}/Code/main/mac"
 export PATH="$PATH$(cat ~/.macbin/.path)"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
