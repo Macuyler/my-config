@@ -1,0 +1,10 @@
+[user]
+	name = Macuyler Dunn
+	email = macuyler@gmail.com
+	username = macuyler
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	subs = submodule update --init --recursive
