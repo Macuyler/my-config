@@ -14,6 +14,7 @@ mac install https://github.com/macuyler/config.git -p /bin
 ```
 
 ## Current Configs:
+ - gitconfig
  - gitmux.conf
  - tmux.conf
  - vimrc
