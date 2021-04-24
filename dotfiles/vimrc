@@ -17,11 +17,15 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/goyo.vim'
 " File Tree
 Plugin 'preservim/nerdtree'
+" Linting
+Plugin 'w0rp/ale'
 " Python
 Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
+" JavaScript
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 " --- Close Plugins ---
 call vundle#end()
 
@@ -48,6 +52,9 @@ let g:NERDTreeDirArrows=1
 let g:NERDTreeStatusline="%#NonText#"
 let g:laststatus=0
 let python_highlight_all=1
+let b:ale_linters = { 'javascript': ['prettier', 'eslint'], 'python': ['pylint', 'flake8', 'mypy'] }
+let g:ale_fixers={ 'javascript': ['prettier', 'eslint'], 'python': ['black', 'isort'] }
+let g:ale_fix_on_save=1
 colorscheme onedark
 
 
