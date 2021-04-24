@@ -19,13 +19,12 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'preservim/nerdtree'
 " Linting
 Plugin 'w0rp/ale'
+" Syntax
+Plugin 'sheerun/vim-polyglot'
+" Completion
+Bundle 'Valloric/YouCompleteMe'
 " Python
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
-" JavaScript
-Plugin 'mxw/vim-jsx'
-Plugin 'pangloss/vim-javascript'
 " --- Close Plugins ---
 call vundle#end()
 
@@ -41,8 +40,6 @@ endif
 
 
 " Plugin Settings
-let g:syntastic_python_checkers = ['python']
-let g:syntastic_python_python_exec = 'python3'
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:goyo_width = '60%'
 let g:goyo_height = '100%'
@@ -50,8 +47,6 @@ let g:goyo_linenr = 1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeDirArrows=1
 let g:NERDTreeStatusline="%#NonText#"
-let g:laststatus=0
-let python_highlight_all=1
 let b:ale_linters = { 'javascript': ['prettier', 'eslint'], 'python': ['pylint', 'flake8', 'mypy'] }
 let g:ale_fixers={ 'javascript': ['prettier', 'eslint'], 'python': ['black', 'isort'] }
 let g:ale_fix_on_save=1
@@ -61,6 +56,7 @@ colorscheme onedark
 " *** Global Options ***
 filetype plugin indent on
 syntax on
+set smartindent
 set tabstop=2
 set number
 set splitbelow
