@@ -2,31 +2,24 @@
 " After copying this file to your home directory, run the bin/setup-vim
 " script to install the needed plugins.
 
-" *** Vundle Config ***
-" :PluginInstall ~ to install all listed Plugins
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" --- Open Plugins ---
-" Plugin Manager
-Plugin 'gmarik/Vundle.vim'
+" *** Plugins ***
+" :PlugInstall ~ to install all listed Plugins
+call plug#begin('~/.vim/plugged')
 " Color Scheme
-Plugin 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 " Zen Mode :Goyo
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 " File Tree
-Plugin 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 " Linting
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 " Syntax
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " Completion
-Bundle 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 " Python
-Plugin 'vim-scripts/indentpython.vim'
-" --- Close Plugins ---
-call vundle#end()
+Plug 'vim-scripts/indentpython.vim'
+call plug#end()
 
 
 " Custom Background Color

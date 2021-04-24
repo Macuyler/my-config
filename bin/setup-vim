@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Setup everything needed to use the custom vimrc.
-# This script should be run after the config-my script.
-[ ! -d "${HOME}/.vim/bundle/Vundle.vim" ] && \
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && \
-	vim -c ":PluginInstall" && \
-	~/.vim/bundle/YouCompleteMe/install.py && \
-	pip3 install --user flake8
+# Install vim-plug
+[ ! -d "${HOME}/.vim/autoload/plug.vim" ] && \
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo $'\n * Vim is all setup!\n'
+# Install plugins
+vim -c ":PlugInstall" && \
+	~/.vim/plugged/YouCompleteMe/install.py && \
+	echo $'\n * Vim is all setup!\n'
 
