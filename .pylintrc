@@ -1,0 +1,5 @@
+[pylint]
+disable=unbalanced-tuple-unpacking,
+		missing-function-docstring,
+		missing-module-docstring,
+		invalid-name
