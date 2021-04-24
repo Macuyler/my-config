@@ -26,23 +26,28 @@ call plug#end()
 if (has("autocmd") && !has("gui_running"))
 	augroup colors
 		autocmd!
-		let s:background = { "gui": "#1D1D1D", "cterm": "235", "cterm16": "0" } " Original #282C34
+		let s:background = { "gui": "#1D1D1D", "cterm": "235", "cterm16": "0" }
 		autocmd ColorScheme * call onedark#set_highlight("Normal", { "bg": s:background }) "No `fg` setting
 	augroup END
 endif
 
 
-" Plugin Settings
+" *** Plugin Settings ***
+" YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
+" Goyo
 let g:goyo_width = '60%'
 let g:goyo_height = '100%'
 let g:goyo_linenr = 1
+" Nerd Tree
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeDirArrows=1
 let g:NERDTreeStatusline="%#NonText#"
+" ALE
 let b:ale_linters = { 'javascript': ['prettier', 'eslint'], 'python': ['pylint', 'flake8', 'mypy'] }
 let g:ale_fixers={ 'javascript': ['prettier', 'eslint'], 'python': ['black', 'isort'] }
 let g:ale_fix_on_save=1
+" One Dark
 colorscheme onedark
 
 
