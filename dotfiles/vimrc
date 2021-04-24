@@ -30,7 +30,7 @@ call vundle#end()
 if (has("autocmd") && !has("gui_running"))
 	augroup colors
 		autocmd!
-		let s:background = { "gui": "#1B1B1B", "cterm": "235", "cterm16": "0" } " Original #282C34
+		let s:background = { "gui": "#1D1D1D", "cterm": "235", "cterm16": "0" } " Original #282C34
 		autocmd ColorScheme * call onedark#set_highlight("Normal", { "bg": s:background }) "No `fg` setting
 	augroup END
 endif
