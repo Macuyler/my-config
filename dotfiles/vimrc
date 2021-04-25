@@ -32,6 +32,14 @@ if (has("autocmd") && !has("gui_running"))
 endif
 
 
+" Fix .jsx and .vue files
+augroup FiletypeGroup
+	autocmd!
+	au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+	au BufNewFile,BufRead *.vue set filetype=javascript.vue
+augroup END
+
+
 " *** Plugin Settings ***
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -44,8 +52,15 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeDirArrows=1
 let g:NERDTreeStatusline="%#NonText#"
 " ALE
-let b:ale_linters = { 'javascript': ['prettier', 'eslint'], 'python': ['pylint', 'flake8', 'mypy'] }
-let g:ale_fixers={ 'javascript': ['prettier', 'eslint'], 'python': ['black', 'isort'] }
+let g:ale_linter_aliases = {
+\	'jsx': ['javascript'],
+\	'vue': ['javascript'] }
+let g:ale_linters = {
+\	'javascript': ['prettier', 'eslint'],
+\	'python': ['pylint', 'flake8', 'mypy'] }
+let g:ale_fixers={
+\	'javascript': ['prettier', 'eslint'],
+\	'python': ['black', 'isort'] }
 let g:ale_fix_on_save=1
 " One Dark
 colorscheme onedark
