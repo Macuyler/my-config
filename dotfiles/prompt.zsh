@@ -12,7 +12,8 @@ else
 fi
 # Get the branch of the current dir
 git_prompt() {
-	gitmux -cfg ~/.gitmux.conf $pwd | format-branch
+	gitmux -cfg ~/.gitmux.conf $pwd 2> /dev/null \
+		| format-branch || echo "" 2> /dev/null
 }
 setopt prompt_subst
 export RPROMPT='%F{'"$PROMPT_DIR_COLOR"'}%1~$(git_prompt)%f '
