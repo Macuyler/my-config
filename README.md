@@ -6,11 +6,12 @@ This is a repo containing my commonly used dotfiles and utilities.
 ```
 git clone https://github.com/macuyler/config.git
 cd config
-./bin/config-my {name-of-your-os}
+./bin/config-my {os-name}
 ```
  - With [mac](https://github.com/macuyler/mac)
 ```
 mac install https://github.com/macuyler/config.git -p /bin
+config-my {os-name}
 ```
 
 ## Current Configs:
@@ -29,7 +30,7 @@ mac install https://github.com/macuyler/config.git -p /bin
  - **ubuntu**
    - bashrc
    - qd_config
-   
+
 ## Current Utils:
  - **battery**: Battery percentage for tmux status
  - **config-my**: Copies config files to your ~ dir
