@@ -17,6 +17,8 @@ config-my {os-name}
 ## Current Configs:
  - gitconfig
  - gitmux.conf
+ - hushlogin
+ - prompt.zsh
  - tmux.conf
  - vimrc
  - **mac**
@@ -30,6 +32,7 @@ config-my {os-name}
  - **ubuntu**
    - bashrc
    - qd_config
+   - zshrc
 
 ## Current Utils:
  - **battery**: Battery percentage for tmux status
