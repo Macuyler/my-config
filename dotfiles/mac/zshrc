@@ -1,9 +1,4 @@
-export PROMPT=" %F{blue}%M%f %# "
-git_prompt() {
-	gitmux -cfg ~/.gitmux.conf $pwd | format-branch
-}
-setopt prompt_subst
-export RPROMPT='%F{cyan}%1~$(git_prompt)%f '
+source ~/.prompt.zsh 'blue'
 export CLICOLOR=1
 export PATH="/usr/local/sbin:$PATH"
 
