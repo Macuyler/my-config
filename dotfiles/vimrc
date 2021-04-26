@@ -57,7 +57,7 @@ let g:ale_linter_aliases = {
 \	'vue': ['javascript'] }
 let g:ale_linters = {
 \	'javascript': ['prettier', 'eslint'],
-\	'python': ['pylint', 'flake8', 'mypy'] }
+\	'python': ['pylint', 'mypy'] }
 let g:ale_fixers={
 \	'javascript': ['prettier', 'eslint'],
 \	'python': ['black', 'isort'] }
