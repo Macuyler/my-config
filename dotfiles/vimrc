@@ -43,6 +43,7 @@ augroup END
 " *** Plugin Settings ***
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_filepath_blacklist = {}
 " Goyo
 let g:goyo_width = '60%'
 let g:goyo_height = '100%'
@@ -143,4 +144,6 @@ endfunction
 :call ToggleHiddenAll() " Hide Status Line by default
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
+" YCM Keymap
+map <C-]> :YcmCompleter GoTo<CR>
 
