@@ -1,5 +1,3 @@
-# My config
-This is a repo containing my commonly used dotfiles and utilities.
 
 ## Setup
  - Standard
@@ -41,6 +39,7 @@ config-my {os-name}
  - **format-branch**: Prepend branch name with "@"
  - **sandbox**: Quickly open up hidden dir to mess around in
  - **setup-vim**: Install all plugins used in the vimrc
+ - **setup-ycm**: Run a customized install of YouCompleteMe
  - **tmux-remote**: Utilizes a c-A config for nested tmux
 
 ## Misc.
