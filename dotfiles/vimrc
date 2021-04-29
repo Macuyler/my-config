@@ -145,5 +145,5 @@ endfunction
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
 " YCM Keymap
-map <C-]> :YcmCompleter GoTo<CR>
+nnoremap <C-]> :YcmCompleter GoTo<CR>
 
