@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+
+import subprocess
+import sys
+from pathlib import Path
+
+import inquirer
+
+languages = {
+    "C": "--clangd-completer",
+    "C#":" --cs-completer",
+    "Go": "--go-completer",
+    "JavaScript": "--ts-completer",
+    "Rust": "--rust-completer",
+    "Java": "--java-completer"
+}
+
+def setup_js():
+    """
+    Check for a valid nodejs version and install typescript globally.
+    """
+    print('Running pre-install setup for JavaScript...')
+    stage = 0
+    try:
+        node_version = subprocess.run(['node', '--version'], stdout=subprocess.PIPE, check=True)
+        current_version = node_version.stdout.decode('utf-8').strip()
+        minimum_version = 'v14.0.0'
+        if current_version >= minimum_version:
+            stage = 1
+            subprocess.run(['npm', 'install', '-g', 'typescript'], check=True)
+            print('\n Successfully ran pre-install setup for JavaScript!\n')
+        else:
+            print('\n * Invalid nodejs version:', current_version)
+            print('   YouCompleteMe requires node v14 or higher.')
+            print('   You can install nodejs here: https://nodejs.org\n')
+            sys.exit(1)
+    except subprocess.CalledProcessError:
+        if stage == 0:
+            print('\n * Missing nodejs installation!')
+            print('  YouCompleteMe requires node v14 or higher.')
+            print('  You can install nodejs here: https://nodejs.org\n')
+        elif stage == 1:
+            print('\n * Failed to install typescript!')
+            print('   YouCompleteMe requires the typescript npm package for code completion.')
+            print('   Make sure you have npm properly setup so packages can'
+                  ' be installed globally.\n')
+        sys.exit(1)
+
+setup_langs = {
+    "JavaScript": setup_js,
+}
+
+def run_install(flags):
+    """
+    Run the YouCompleteMe install script and pass the given flags as arguments.
+    """
+    try:
+        print('\n Running YouCompleteMe Install Script...\n')
+        subprocess.run([f'{Path.home()}/.vim/plugged/YouCompleteMe/install.py'] + flags, check=True)
+        print('\n Successfully installed YouCompletMe!')
+    except subprocess.CalledProcessError:
+        print('\n * Failed to install YouCompleteMe!\n')
+        sys.exit(1)
+
+def main():
+    prompts = [
+        inquirer.Checkbox('langs',
+                          message='Select the languages you would like to use',
+                          choices=languages.keys())
+    ]
+    # Prompt for language selection.
+    print('\n *  YouCompleteMe offers optional support for the following languages.')
+    selections = inquirer.prompt(prompts)['langs']
+    # Format install flags from selection.
+    flags = list(map(lambda l: languages[l], selections))
+    if len(selections) == len(languages.keys()):
+        flags = ['--all']
+    # Run lang specific setup.
+    for lang in selections:
+        if lang in setup_langs:
+            setup_langs[lang]()
+    # Run install script.
+    run_install(flags)
+
+if __name__ == '__main__':
+    main()

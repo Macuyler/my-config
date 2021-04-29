@@ -7,6 +7,6 @@
 
 # Install plugins
 vim -c ":PlugInstall" && \
-	~/.vim/plugged/YouCompleteMe/install.py && \
-	echo $'\n * Vim is all setup!\n'
+	pip3 install inquirer --user && \
+	setup-ycm && echo $'\n * Vim is all setup!\n'
 
