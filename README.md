@@ -40,7 +40,6 @@ config-my {os-name}
  - **sandbox**: Quickly open up hidden dir to mess around in
  - **setup-vim**: Install all plugins used in the vimrc
  - **setup-ycm**: Run a customized install of YouCompleteMe
- - **tmux-remote**: Utilizes a c-A config for nested tmux
 
 ## Misc.
 To show the current git branch in the status-right, download the latest [gitmux](https://github.com/arl/gitmux/releases) build and move it to `./bin/gitmux`.
