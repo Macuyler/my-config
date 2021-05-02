@@ -21,6 +21,8 @@ export PATH="$PATH$(cat ~/.macbin/.path)"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
 alias tm="tmux new -s '?' || tmux"
+TREMOTE="-f ~/.tmux.remote.conf"
+alias tmr="tmux new -s '?' $TREMOTE || tmux $TREMOTE"
 
 [ -d "${HOME}/ghidra_scripts" ] && rmdir ~/ghidra_scripts
 
