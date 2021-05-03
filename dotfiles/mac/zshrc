@@ -1,4 +1,4 @@
-source ~/.prompt.zsh -h:blue -d:magenta
+source ~/.prompt.zsh -h:blue -d:cyan
 export CLICOLOR=1
 export PATH="/usr/local/sbin:$PATH"
 
