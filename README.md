@@ -1,4 +1,3 @@
-
 ## Setup
  - Standard
 ```
@@ -18,6 +17,7 @@ config-my {os-name}
  - hushlogin
  - prompt.zsh
  - tmux.conf
+ - tmux.remote.conf
  - vimrc
  - **mac**
    - bash_profile
