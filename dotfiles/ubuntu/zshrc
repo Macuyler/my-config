@@ -1,4 +1,4 @@
-source ~/.prompt.zsh 'green' 'cyan'
+source ~/.prompt.zsh -h:green -dbr:cyan
 alias ls="ls --color=auto"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
