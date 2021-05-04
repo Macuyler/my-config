@@ -9,8 +9,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 " Zen Mode :Goyo
 Plug 'junegunn/goyo.vim'
-" File Tree
-Plug 'preservim/nerdtree'
 " Linting
 Plug 'w0rp/ale'
 " Syntax
@@ -48,10 +46,6 @@ let g:ycm_filepath_blacklist = {}
 let g:goyo_width = '60%'
 let g:goyo_height = '100%'
 let g:goyo_linenr = 1
-" Nerd Tree
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeDirArrows=1
-let g:NERDTreeStatusline="%#NonText#"
 " ALE
 let g:ale_linter_aliases = {
 \	'jsx': ['javascript'],
@@ -84,6 +78,8 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
 
+" Config netrw
+let g:netrw_banner=0
 
 " Navigate Splits
 nnoremap <C-J> <C-W><C-J>
@@ -116,12 +112,6 @@ endfunction
 
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
-
-
-" Auto NERDTree
-map <C-\> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
 " Toggle Status Line
