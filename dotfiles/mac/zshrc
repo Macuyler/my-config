@@ -14,7 +14,7 @@ setup() {
 
 
 # Node
-nvm_cmds=(nvm node npm npx firebase uvcc)
+nvm_cmds=(nvm node npm npx firebase uvcc tsserver)
 lazynvm() {
 	unset -f $nvm_cmds
 	export NVM_DIR="$HOME/.nvm"
