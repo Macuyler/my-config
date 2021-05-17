@@ -7,4 +7,5 @@
 	br = branch
 	ci = commit
 	st = status
+	cp = cherry-pick
 	subs = submodule update --init --recursive
