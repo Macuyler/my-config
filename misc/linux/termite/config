@@ -1,0 +1,44 @@
+[options]
+font = Monaco 10
+scrollback_lines = 10000
+mouse_autohide = true
+
+[colors]
+
+# special
+foreground      = #ffffff
+foreground_bold = #ffffff
+cursor          = #ffffff
+background      = #1d1d1d
+
+# black
+color0  = #000000
+color8  = #686868
+
+# red
+color1  = #c91b00
+color9  = #c2433d
+
+# green
+color2  = #00c200
+color10 = #22e42c
+
+# yellow
+color3  = #c7c400
+color11 = #fffc67
+
+# blue
+color4  = #5986ef
+color12 = #6871ff
+
+# magenta
+color5  = #ca30c7
+color13 = #ff77ff
+
+# cyan
+color6  = #00c5c7
+color14 = #60fdff
+
+# white
+color7  = #c7c7c7
+color15 = #ffffff
