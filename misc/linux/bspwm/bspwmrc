@@ -3,6 +3,12 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/run.sh &
 nm-applet &
+picom &
+setxkbmap us &
+nitrogen --restore &
+xsettingsd &
+xsetroot -cursor_name left_ptr
+# VBoxClient-all &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 

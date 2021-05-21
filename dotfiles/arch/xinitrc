@@ -38,10 +38,4 @@ fi
 
 export GTK_THEME="AdwaitaDark"
 
-VBoxClient-all &
-setxkbmap us &
-nitrogen --restore &
-xsettingsd &
-xsetroot -cursor_name left_ptr
-picom &
 exec bspwm
