@@ -18,6 +18,7 @@ export PATH="$PATH:${HOME}/Library/Python/3.9/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 export PATH="$PATH$(cat ~/.macbin/.path)"
+alias whenami="tty-clock -c -C 4"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
 alias tm="tmux new -s '?' || tmux"

@@ -1,5 +1,6 @@
 source ~/.prompt.zsh -h:cyan -d:blue
 alias ls="ls --color=auto"
+alias whenami="tty-clock -c -C 6"
 alias sandbox="source sandbox"
 alias qd="source qd.sh"
 alias tm="tmux new -s '?' || tmux"
