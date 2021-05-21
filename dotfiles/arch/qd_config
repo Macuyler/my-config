@@ -1,0 +1,3 @@
+root=/home/macuyler
+include=[/home/macuyler/.sandbox]
+exclude=[node_modules,__pycache__,/home/macuyler/snap]

@@ -1,0 +1,9 @@
+source ~/.prompt.zsh -h:cyan -d:blue
+alias ls="ls --color=auto"
+alias sandbox="source sandbox"
+alias qd="source qd.sh"
+alias tm="tmux new -s '?' || tmux"
+TREMOTE="-f ~/.tmux.remote.conf"
+alias tmr="tmux $TREMOTE new -s '?' || tmux $TREMOTE"
+export PATH="$PATH$(cat ~/.macbin/.path)"
+export PATH="$PATH:${HOME}/.local/bin"
