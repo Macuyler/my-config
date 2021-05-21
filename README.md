@@ -19,14 +19,21 @@ config-my {os-name}
  - tmux.conf
  - tmux.remote.conf
  - vimrc
+ - **arch**
+   - bashrc
+   - qd_config
+   - xinitrc
+   - Xresources
+   - zprofile
+   - zshrc
+ - **kali**
+   - bashrc
  - **mac**
    - bash_profile
    - clock.conf
    - qd_config
    - zprofile
    - zshrc
- - **kali**
-   - bashrc
  - **ubuntu**
    - bashrc
    - qd_config
