@@ -15,6 +15,7 @@ Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 " Completion
 Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim'
 " Python
 Plug 'vim-scripts/indentpython.vim'
 call plug#end()
@@ -42,6 +43,7 @@ augroup END
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_filepath_blacklist = {}
+let g:ycm_filetype_blacklist = { 'dart': 1 }
 " Goyo
 let g:goyo_width = '60%'
 let g:goyo_height = '100%'
@@ -101,8 +103,8 @@ endfunction
 
 function! s:goyo_leave()
 	" Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
+	if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+		if b:quitting_bang
 			qa!
 		else
 			qa
@@ -134,6 +136,24 @@ endfunction
 :call ToggleHiddenAll() " Hide Status Line by default
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
+
 " YCM Keymap
 nnoremap <C-]> :YcmCompleter GoTo<CR>
+
+
+" CoC Tab Completion
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+	\ pumvisible() ? "\<C-n>" :
+	\ <SID>check_back_space() ? "\<Tab>" :
+	\ coc#refresh()
+
+" CoC auto enable/disable
+" Ref: https://github.com/neoclide/coc.nvim/issues/349
+autocmd BufNew,BufEnter *.dart execute "silent! CocEnable"
+autocmd BufLeave *.dart execute "silent! CocDisable"
 
