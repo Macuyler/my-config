@@ -32,7 +32,7 @@ output() {
 		[[ "$status" = "$BATTERY" ]] && echo "Not Charging"
 	else
 		[[ "$status" = "$CHARGING" ]] && echo "#[fg=cyan]ꜛ$pct%"
-		[[ "$status" = "$BATTERY" ]] && echo " $pct%"
+		[[ "$status" = "$BATTERY" ]] && echo "$pct%"
 	fi
 }
 
