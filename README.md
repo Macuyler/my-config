@@ -26,8 +26,6 @@ config-my {os-name}
    - Xresources
    - zprofile
    - zshrc
- - **kali**
-   - bashrc
  - **mac**
    - bash_profile
    - clock.conf

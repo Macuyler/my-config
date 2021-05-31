@@ -1,6 +1,0 @@
-export PS1='\e[01;31m\u@\h\e[0;0m:\e[01;34m\W \e[0;0m$ '
-alias ls="ls --color=auto"
-alias sandbox="source sandbox"
-alias qd="source qd.sh"
-alias tm="tmux new -s '?' || tmux"
-export PATH="$PATH$(cat ~/.macbin/.path)"
