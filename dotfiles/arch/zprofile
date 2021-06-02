@@ -1,3 +1,4 @@
 [[ $(fgconsole 2> /dev/null) == 1 ]] && exec startx --vt1
 
 export PATH="$PATH:${HOME}/.npm-global/bin"
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
