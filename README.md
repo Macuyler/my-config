@@ -40,7 +40,6 @@ config-my {os-name}
 ## Current Utils:
  - **battery**: Battery percentage for tmux status
  - **config-my**: Copies config files to your ~ dir
- - **ctf-mount**: Mount a local CTF nfs volume on mac
  - **format-branch**: Prepend branch name with "@"
  - **sandbox**: Quickly open up hidden dir to mess around in
  - **setup-vim**: Install all plugins used in the vimrc
