@@ -57,7 +57,8 @@ let g:ale_linters = {
 \	'python': ['pylint', 'mypy'] }
 let g:ale_fixers={
 \	'javascript': ['prettier', 'eslint'],
-\	'python': ['black', 'isort'] }
+\	'python': ['black', 'isort'],
+\	'dart': ['dartfmt'] }
 let g:ale_fix_on_save=1
 " One Dark
 colorscheme onedark
