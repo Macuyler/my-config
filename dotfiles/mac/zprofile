@@ -7,8 +7,10 @@ test -d "${GOPATH}" || mkdir "${GOPATH}"
 test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
 # Flutter
-export PATH="$PATH:${HOME}/Library/flutter/bin"
-export PATH="$PATH:${HOME}/Library/flutter/bin/cache/dart-sdk/bin"
+export FLUTTER_PATH="/usr/local/Caskroom/flutter/2.2.0/flutter"
+export PATH="$PATH:${FLUTTER_PATH}/bin/cache/dart-sdk/bin"
+export PATH="$PATH:${FLUTTER_PATH}/.pub-cache/bin"
+export PATH="$PATH:${FLUTTER_PATH}/bin"
 
 
 # Misc.
