@@ -43,7 +43,7 @@ augroup END
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_filepath_blacklist = {}
-let g:ycm_filetype_blacklist = { 'dart': 1 }
+let g:ycm_filetype_blacklist = { 'dart': 1, 'swift': 1 }
 " Goyo
 let g:goyo_width = '60%'
 let g:goyo_height = '100%'
@@ -151,6 +151,6 @@ inoremap <silent><expr> <Tab>
 
 " CoC auto enable/disable
 " Ref: https://github.com/neoclide/coc.nvim/issues/349
-autocmd BufNew,BufEnter *.dart execute "silent! CocEnable"
-autocmd BufLeave *.dart execute "silent! CocDisable"
+autocmd BufNew,BufEnter *.dart,*.swift execute "silent! CocEnable"
+autocmd BufLeave *.dart,*.swift execute "silent! CocDisable"
 
