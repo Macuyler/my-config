@@ -11,6 +11,23 @@
 BOXPATH="$HOME/.sandbox"
 TODAY=$(date +'%m-%d-%Y')
 
-[ ! -d "$BOXPATH/$TODAY" ] && mkdir "$BOXPATH/$TODAY"
-cd "$BOXPATH/$TODAY"
+cd_box() {
+	[ ! -d "$BOXPATH/$TODAY" ] && mkdir "$BOXPATH/$TODAY"
+	cd "$BOXPATH/$TODAY"
+}
 
+if [ "$1" = "" ]; then
+	# Empty Sandbox
+	cd_box
+elif [ "$1" = "-p" ]; then
+	# Python Sandbox
+	cd_box
+	[ ! -d .venv ] && \
+		python3 -m venv .venv
+	[ -d .venv ] && \
+		source .venv/bin/activate
+elif [ "$1" = "-n" ]; then
+	# Node.js Sandbox
+	cd_box
+	[ ! -f package.json ] && npm init -y > /dev/null
+fi
