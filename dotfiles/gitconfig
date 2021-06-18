@@ -9,3 +9,5 @@
 	st = status
 	cp = cherry-pick
 	subs = submodule update --init --recursive
+[pull]
+	ff = only
